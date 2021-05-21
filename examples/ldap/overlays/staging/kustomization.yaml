@@ -1,9 +1,17 @@
-resources:
+bases:
 - ../../base
 patchesStrategicMerge:
- - deployment.yaml
+- deployment.yaml
 namePrefix: staging-
 configMapGenerator:
-- name: env-config
+- name: ldap-configmap
+  behavior: replace
   files:
   - config.env
+secretGenerator:
+  - name: app-tls
+    files:
+      - "tls.cert"
+      - "tls.key"
+    type: "kubernetes.io/tls"
+
