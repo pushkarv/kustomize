@@ -3,15 +3,14 @@ kind: Kustomization
 namePrefix: production-
 nameSuffix: -v1
 commonLabels:
-  variant: staging
+  variant: production 
   org: acmeCorporation
 commonAnnotations:
   note: Hello, I am staging!
-resources:
+bases:
 - ../../base
 configMapGenerator:
-- name: my-map
+- name: the-map
+  behavior: merge
   files:
   - spawner_ui_config.yaml
-patchesStrategicMerge:
-- map.yaml

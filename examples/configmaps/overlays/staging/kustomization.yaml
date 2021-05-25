@@ -7,11 +7,10 @@ commonLabels:
   org: acmeCorporation
 commonAnnotations:
   note: Hello, I am staging!
-resources:
+bases:
 - ../../base
 configMapGenerator:
-- name: my-map
-  files:
+- name: the-map
+  behavior: merge
+  files: 
   - spawner_ui_config.yaml
-patchesStrategicMerge:
-- map.yaml

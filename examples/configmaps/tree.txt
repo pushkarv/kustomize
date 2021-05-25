@@ -1,0 +1,12 @@
+.
+├── base
+│   ├── kustomization.yaml
+│   └── spawner_ui_config.yaml
+└── overlays
+    ├── production
+    │   ├── kustomization.yaml
+    │   ├── my-config.yaml
+    │   └── spawner_ui_config.yaml
+    └── staging
+        ├── kustomization.yaml
+        └── spawner_ui_config.yaml
